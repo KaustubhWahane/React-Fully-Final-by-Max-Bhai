@@ -54,6 +54,7 @@ main {
 }
 
 #core-concepts {
+  display: flex;
   padding: 2rem;
   border-radius: 6px;
   background-color: #140524;

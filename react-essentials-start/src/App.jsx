@@ -26,7 +26,7 @@ function App() {
       </main>
 
      <main>
-       <seciton id="core-concepts">
+       <section id="core-concepts">
         {/* Long Method */}
          <CoreConcepts
          title={CORE_CONCEPTS[0].title}
@@ -37,7 +37,7 @@ function App() {
          <CoreConcepts {...CORE_CONCEPTS[1]}/>
          <CoreConcepts {...CORE_CONCEPTS[2]}/>
          <CoreConcepts {...CORE_CONCEPTS[3]}/>
-       </seciton>
+       </section>
      </main>
     </div>
   );
