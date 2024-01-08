@@ -1,0 +1,11 @@
+What is React?
+It is a JavaScript Library.
+Use?
+Building User Interfaces
+Why to use?
+It has a smooth transition and also features better functionalities.
+
+<!-- Never Forget React is Declarative -->
+
+React Project uses a build process
+import and export:- Default and as keyword and also using * to gather all the classes or data from the js file.
