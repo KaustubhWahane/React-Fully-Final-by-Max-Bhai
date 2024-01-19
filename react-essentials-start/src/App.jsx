@@ -13,7 +13,6 @@ function CoreConcepts(props){
   }
 function App() {
   const [selectedTopic , setSelectedTopic] = useState();
-
   function handleSelect(selectedButton){
     // selectedButton => "components" , "jsx" , "props" , "state  "
     setSelectedTopic(selectedButton);
@@ -40,23 +39,48 @@ function App() {
          <CoreConcepts {...CORE_CONCEPTS[1]}/>
          <CoreConcepts {...CORE_CONCEPTS[2]}/>
          <CoreConcepts {...CORE_CONCEPTS[3]}/>
+
+         {/* Outputting Dynamically */}
+          {/* <ul>
+            {CORE_CONCEPTS.map((conceptItem)=>(
+              <CoreConcepts key={conceptItem.title}{...conceptItem} />
+            ))}
+          </ul> */}
+
        </section>
      <section id='examples'>
       <h2>Examples</h2>
       <menu>
-        <TabButton onSelect={() => { handleSelect("components") }}>Component</TabButton>
-        <TabButton onSelect={() => { handleSelect("jsx") }}>JSX</TabButton>
-        <TabButton onSelect={() => { handleSelect("props") }}>Props</TabButton>
-        <TabButton onSelect={() => { handleSelect("state") }}>State</TabButton>
+        {/* Attribute Rendering */}
+        <TabButton 
+        isSelect={selectedTopic == "components"}
+        onSelect={() => { handleSelect("components") }}
+        >Component
+        </TabButton>
+        <TabButton 
+        onSelect={() => { handleSelect("jsx") }}
+        isSelect={selectedTopic == "jsx"}
+        >JSX</TabButton>
+        <TabButton 
+        onSelect={() => { handleSelect("props") }}
+        isSelect={selectedTopic == "props"}
+        >Props</TabButton>
+        <TabButton 
+        onSelect={() => { handleSelect("state") }}
+        isSelect={selectedTopic == "state"}
+        >State</TabButton>
       </menu>
       {/* Conditional Rendering */}
-        <div id="tab-content">
+      {/* Note we are using Ternary Operator */}
+      {!selectedTopic ? (<p>Choose any Tab for Details</p>) : (<div id="tab-content">
           <h3>{EXAMPLES[selectedTopic].title}</h3>
           <p>{EXAMPLES[selectedTopic].description}</p>
           <pre>
             <code>{EXAMPLES[selectedTopic].code}</code>
           </pre>
-        </div>
+        </div>  
+      )}
+        
      </section>
      </main>
     </div>
